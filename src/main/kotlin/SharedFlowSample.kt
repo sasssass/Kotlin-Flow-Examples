@@ -6,6 +6,11 @@ lateinit var collectingJob : Job
 
 fun main() = runBlocking{
 
+
+    // here you will only collect the second emission
+    // why? because it's Hot-Stream Flow, so the emitter emits and doesn't care about subscriber (collector)
+    // the collector won't collect first value because it's attached to emitter after the first emit
+
     val sharedFlowHelper = SharedFlowHelper()
 
 

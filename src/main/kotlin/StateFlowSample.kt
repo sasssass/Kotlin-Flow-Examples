@@ -6,6 +6,10 @@ lateinit var collectingStateFlowJob : Job
 
 fun main() = runBlocking{
 
+    // here you will collect both emission
+    // why? because it's Hot-Stream Flow, but it has State too
+    // so whenever a collector collects that it will get the latest value as State (which is 1)
+
     val stateFlowHelper = StateFlowHelper()
 
 
